@@ -1,0 +1,57 @@
+.wrapCard {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: 0 auto;
+  max-width: 390px;
+}
+.cardBody {
+  height: 495px;
+  background: #f8f8f8;
+  margin-bottom: 0;
+}
+.cardImg {
+  width: inherit;
+  height: 234px;
+  object-fit: cover;
+  width: 100%;
+  margin-bottom: 2.2rem;
+}
+
+.cardTitle {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 28px;
+  text-align: left;
+  margin-bottom: 1.6rem;
+  padding: 0 30px;
+}
+
+.cardInstructions {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 25px;
+
+  height: 100px;
+  text-align: left;
+  overflow: hidden;
+  padding: 0 30px;
+}
+
+.wrapCardBtn {
+  display: flex;
+  justify-content: space-between;
+}
+
+.cardBtn {
+  width: 50%;
+  width: 192px;
+  height: 45px;
+  background: #c4c4c4;
+  border: none;
+  margin: 4px 0;
+}

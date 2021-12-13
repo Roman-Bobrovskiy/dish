@@ -1,0 +1,19 @@
+.navbar {
+  display: flex;
+  justify-content: center;
+  background-color: #f2f2f2;
+  align-items: center;
+  color: black;
+}
+
+.navbarLink {
+  color: black;
+}
+
+.navbarBtn {
+  height: 38px;
+  position: relative;
+  left: 30%;
+  margin: 1rem;
+  background: #c4c4c4;
+}
