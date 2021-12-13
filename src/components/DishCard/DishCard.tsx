@@ -1,34 +1,28 @@
 import React from "react";
-import { Preloader } from "react-materialize";
-import { useTypeSelector } from "../../hooks/useTypeSecector";
+import { useLocation } from "react-router-dom";
 import { DishCardBtn } from "./DishCardBtn";
+import { dishCardProps } from "../../interfaces/DishCardProps";
 
 import styles from "./DishCard.module.css";
 
-export const DishCard: React.FC = () => {
-  const { data, loading } = useTypeSelector((state) => state.dish);
-
+export const DishCard: React.FC<dishCardProps> = ({
+  imgLink,
+  title,
+  instructions,
+}) => {
+  const location = useLocation();
   return (
     <>
-      {loading && <Preloader active color="blue" flashing={false} size="big" />}
-      {data.length !== 0 && (
-        <div className={styles.wrapCard}>
-          <ul className={styles.cardBody}>
-            <li className={styles.cardImg}>
-              <img
-                className={styles.cardImg}
-                src={data[0].strMealThumb}
-                alt={data[0].strMealThumb}
-              />
-            </li>
-            <li className={styles.cardTitle}> {data[0].strMeal}</li>
-            <li className={styles.cardInstructions}>
-              {data[0].strInstructions}
-            </li>
-          </ul>
-          <DishCardBtn />
-        </div>
-      )}
+      <div className={styles.wrapCard}>
+        <ul className={styles.cardBody}>
+          <li className={styles.cardImg}>
+            <img className={styles.cardImg} src={imgLink} alt={imgLink} />
+          </li>
+          <li className={styles.cardTitle}> {title}</li>
+          <li className={styles.cardInstructions}>{instructions}</li>
+        </ul>
+        {location.pathname === "/" && <DishCardBtn />}
+      </div>
     </>
   );
 };

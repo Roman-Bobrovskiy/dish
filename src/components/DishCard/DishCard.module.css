@@ -35,7 +35,6 @@
   font-weight: normal;
   font-size: 18px;
   line-height: 25px;
-
   height: 100px;
   text-align: left;
   overflow: hidden;
@@ -54,4 +53,13 @@
   background: #c4c4c4;
   border: none;
   margin: 4px 0;
+}
+
+.cardBtn:active {
+  background-color: gray;
+  border: 1px solid rgb(160, 160, 160);
+}
+
+.cardBtn:focus {
+  background-color: #c4c4c4;
 }

@@ -5,6 +5,11 @@ interface getDishGetDishAction {
   payload: any[];
 }
 
+interface addDishToFavouriteAction {
+  type: actionType.ADD_TO_FAVOURITE;
+  payload: any[];
+}
+
 interface getDishLoadingAction {
   type: actionType.LOADING;
   payload: boolean;
@@ -17,4 +22,5 @@ interface getDishErrorAction {
 export type getDishAction =
   | getDishGetDishAction
   | getDishLoadingAction
-  | getDishErrorAction;
+  | getDishErrorAction
+  | addDishToFavouriteAction;

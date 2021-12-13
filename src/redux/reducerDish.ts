@@ -22,6 +22,14 @@ export const reducerDish = (
         error: state.error,
       };
 
+    case actionType.ADD_TO_FAVOURITE:
+      return {
+        data: state.data,
+        listFavouriteDish: [...state.listFavouriteDish, action.payload],
+        loading: state.loading,
+        error: state.error,
+      };
+
     case actionType.LOADING:
       return {
         data: state.data,

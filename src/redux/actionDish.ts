@@ -15,3 +15,9 @@ export const getDish = () => {
       .finally(() => dispatch({ type: actionType.LOADING, payload: false }));
   };
 };
+
+export const addToFavourite = (dish: any[]) => {
+  return async function (dispatch: Dispatch<getDishAction>) {
+    await dispatch({ type: actionType.ADD_TO_FAVOURITE, payload: dish });
+  };
+};
