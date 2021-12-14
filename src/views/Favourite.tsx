@@ -1,9 +1,10 @@
 import React from "react";
 import { DishCard } from "../components/DishCard/DishCard";
+import { Modal } from "../components/Modal/Modal";
 import { useTypeSelector } from "../hooks/useTypeSecector";
 
 export const Favourite: React.FC = () => {
-  const { listFavouriteDish } = useTypeSelector((state) => state.dish);
+  const { listFavouriteDish, modal } = useTypeSelector((state) => state.dish);
 
   return (
     <div className="container">
@@ -16,6 +17,7 @@ export const Favourite: React.FC = () => {
             instructions={dish.strInstructions}
           />
         ))}
+      {modal && <Modal />}
     </div>
   );
 };

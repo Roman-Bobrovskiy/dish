@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import { Preloader } from "react-materialize";
 import { useDispatch } from "react-redux";
 import { DishCard } from "../components/DishCard/DishCard";
 import { useTypeSelector } from "../hooks/useTypeSecector";
@@ -14,7 +13,7 @@ export const Home = () => {
 
   return (
     <>
-      <div className="container center">
+      <div className="container">
         {data.length !== 0 && (
           <DishCard
             imgLink={data[0].strMealThumb}
@@ -23,7 +22,7 @@ export const Home = () => {
           />
         )}
       </div>
-      {loading && <Preloader active color="blue" flashing={false} size="big" />}
+      {/* {loading && <Preloader active color="blue" flashing={false} size="big" />} */}
     </>
   );
 };

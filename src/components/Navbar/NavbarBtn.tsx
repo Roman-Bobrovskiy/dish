@@ -1,7 +1,19 @@
 import React from "react";
+import { useDispatch } from "react-redux";
+import { toggleModal } from "../../redux/actionDish";
 
 import styles from "./Navbar.module.css";
 
 export const NavbarBtn = () => {
-  return <button className={styles.navbarBtn}>Add custom dish</button>;
+  const dispatch = useDispatch();
+
+  const handleAddCustomDish = () => {
+    dispatch(toggleModal(true));
+  };
+
+  return (
+    <button onClick={handleAddCustomDish} className={styles.navbarBtn}>
+      Add custom dish
+    </button>
+  );
 };

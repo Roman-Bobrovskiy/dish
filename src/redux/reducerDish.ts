@@ -5,6 +5,7 @@ import { actionType } from "./actionTypesDish";
 const initialState: stateInterface = {
   data: [],
   listFavouriteDish: [],
+  modal: false,
   loading: false,
   error: null,
 };
@@ -18,6 +19,7 @@ export const reducerDish = (
       return {
         data: action.payload,
         listFavouriteDish: state.listFavouriteDish,
+        modal: state.modal,
         loading: state.loading,
         error: state.error,
       };
@@ -26,6 +28,24 @@ export const reducerDish = (
       return {
         data: state.data,
         listFavouriteDish: [...state.listFavouriteDish, action.payload],
+        modal: state.modal,
+        loading: state.loading,
+        error: state.error,
+      };
+    case actionType.ADD_CUSTOM_DISH:
+      return {
+        data: state.data,
+        listFavouriteDish: [...state.listFavouriteDish, action.payload],
+        modal: state.modal,
+        loading: state.loading,
+        error: state.error,
+      };
+
+    case actionType.TOGGLE_MODAL:
+      return {
+        data: state.data,
+        listFavouriteDish: state.listFavouriteDish,
+        modal: action.payload,
         loading: state.loading,
         error: state.error,
       };
@@ -34,6 +54,7 @@ export const reducerDish = (
       return {
         data: state.data,
         listFavouriteDish: state.listFavouriteDish,
+        modal: state.modal,
         loading: action.payload,
         error: state.error,
       };
@@ -42,6 +63,7 @@ export const reducerDish = (
       return {
         data: state.data,
         listFavouriteDish: state.listFavouriteDish,
+        modal: state.modal,
         loading: state.loading,
         error: action.payload,
       };

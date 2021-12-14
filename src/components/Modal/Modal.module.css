@@ -1,0 +1,96 @@
+.backdrop {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+}
+.wrapModal {
+  width: 433px;
+  height: 407px;
+}
+.modal {
+  display: flex;
+  background: #ffffff;
+  align-items: center;
+  justify-content: center;
+  padding: 2.5rem;
+}
+
+.title {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 21px;
+  color: #000000;
+}
+
+.wrapInput {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 3.1rem;
+}
+
+.inputDishTitle {
+  height: 36px;
+  background: #ffffff;
+  border: 1px solid #acacac;
+  box-sizing: border-box;
+  margin-bottom: 1rem;
+}
+
+.inputDishTitle::placeholder {
+  position: absolute;
+  top: 9px;
+  left: 18px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 21px;
+  color: #b5b5b5;
+}
+
+.inputDescription {
+  height: 159px;
+  background: #ffffff;
+  border: 1px solid #b5b5b5;
+  box-sizing: border-box;
+  margin-bottom: 1rem;
+}
+
+.inputDescription::placeholder {
+  position: absolute;
+  top: 9px;
+  left: 18px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 21px;
+  color: #b5b5b5;
+}
+
+.addBtn {
+  height: 36px;
+  background: #dadada;
+  border: 1px solid #acacac;
+  box-sizing: border-box;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21px;
+  color: #000000;
+}

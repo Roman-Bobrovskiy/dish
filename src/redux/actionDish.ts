@@ -21,3 +21,18 @@ export const addToFavourite = (dish: any[]) => {
     await dispatch({ type: actionType.ADD_TO_FAVOURITE, payload: dish });
   };
 };
+
+export const addCustomDish = (customDish: any) => {
+  return async function (dispatch: Dispatch<getDishAction>) {
+    await dispatch({ type: actionType.ADD_CUSTOM_DISH, payload: customDish });
+  };
+};
+
+export const toggleModal = (currentStateModalWindow: boolean) => {
+  return async function (dispatch: Dispatch<getDishAction>) {
+    await dispatch({
+      type: actionType.TOGGLE_MODAL,
+      payload: currentStateModalWindow,
+    });
+  };
+};
