@@ -2,7 +2,8 @@ import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { DishCard } from "../components/DishCard/DishCard";
 import { useTypeSelector } from "../hooks/useTypeSecector";
-import { addToFavourite, getDish } from "../redux/actionDish";
+import { getDish } from "../redux/actionDish";
+import { setLocalstorage } from "../utils/localstorage";
 
 export const Home = () => {
   const { data, listFavouriteDish, loading } = useTypeSelector(
@@ -15,7 +16,7 @@ export const Home = () => {
   }, [dispatch]);
 
   useEffect(() => {
-    localStorage.setItem("favouriteDish", JSON.stringify(listFavouriteDish));
+    setLocalstorage(listFavouriteDish);
   }, [listFavouriteDish]);
 
   return (

@@ -3,17 +3,14 @@ import { useDispatch } from "react-redux";
 import { DishCard } from "../components/DishCard/DishCard";
 import { Modal } from "../components/Modal/Modal";
 import { useTypeSelector } from "../hooks/useTypeSecector";
-import { addToFavourite } from "../redux/actionDish";
+import { getLocalstorage } from "../utils/localstorage";
 
 export const Favourite: React.FC = () => {
   const { listFavouriteDish, modal } = useTypeSelector((state) => state.dish);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    const savedDish = JSON.parse(localStorage.getItem("favouriteDish") || "[]");
-    savedDish.map((dish: any[]) => {
-      dispatch(addToFavourite(dish));
-    });
+    listFavouriteDish.length === 0 && getLocalstorage(dispatch);
   }, []);
 
   return (

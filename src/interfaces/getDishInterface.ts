@@ -16,6 +16,7 @@ interface addCustomDishAction {
 }
 
 export interface customDish {
+  idMeal: number;
   imgLink: string;
   title: string;
   instructions: string;

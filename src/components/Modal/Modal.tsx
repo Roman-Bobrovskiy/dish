@@ -1,11 +1,14 @@
 import React, { useRef, useState } from "react";
 import { useDispatch } from "react-redux";
+import { useTypeSelector } from "../../hooks/useTypeSecector";
 import { addCustomDish, toggleModal } from "../../redux/actionDish";
+import { setLocalstorage } from "../../utils/localstorage";
 import path from "../../utils/path.json";
 
 import styles from "./Modal.module.css";
 
 export const Modal: React.FC = () => {
+  const { listFavouriteDish } = useTypeSelector((state) => state.dish);
   const [dishTitle, setDishTitle] = useState("");
   const [dishDescription, setDishDescription] = useState("");
   const refTitle = useRef<HTMLInputElement>(null);
@@ -29,6 +32,7 @@ export const Modal: React.FC = () => {
     };
     dispatch(addCustomDish(customDish));
     dispatch(toggleModal(false));
+    setLocalstorage([...listFavouriteDish, customDish]);
   };
 
   return (
