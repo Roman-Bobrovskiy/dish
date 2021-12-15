@@ -22,6 +22,7 @@ export const Modal: React.FC = () => {
 
   const handleAddCustomDish = () => {
     const customDish = {
+      idMeal: Date.now(),
       strMealThumb: path.noImage,
       strMeal: dishTitle,
       strInstructions: dishDescription,

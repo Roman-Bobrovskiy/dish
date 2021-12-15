@@ -2,14 +2,21 @@ import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { DishCard } from "../components/DishCard/DishCard";
 import { useTypeSelector } from "../hooks/useTypeSecector";
-import { getDish } from "../redux/actionDish";
+import { addToFavourite, getDish } from "../redux/actionDish";
 
 export const Home = () => {
-  const { data, loading } = useTypeSelector((state) => state.dish);
+  const { data, listFavouriteDish, loading } = useTypeSelector(
+    (state) => state.dish
+  );
   const dispatch = useDispatch();
+
   useEffect(() => {
     dispatch(getDish());
   }, [dispatch]);
+
+  useEffect(() => {
+    localStorage.setItem("favouriteDish", JSON.stringify(listFavouriteDish));
+  }, [listFavouriteDish]);
 
   return (
     <>
