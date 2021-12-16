@@ -15,23 +15,31 @@ export const Modal: React.FC = () => {
   const refDishDescription = useRef<HTMLTextAreaElement>(null);
   const dispatch = useDispatch();
 
+  //title value
   const handleTitle = () => {
     setDishTitle(refTitle.current!.value);
   };
 
+  //description value
   const handleDishDescription = () => {
     setDishDescription(refDishDescription.current!.value);
   };
 
+  //add custom dish
   const handleAddCustomDish = () => {
+    //custom dish body
     const customDish = {
       idMeal: Date.now(),
       strMealThumb: path.noImage,
       strMeal: dishTitle,
       strInstructions: dishDescription,
     };
+
+    //add custom dish to state
     dispatch(addCustomDish(customDish));
+    //close modal window
     dispatch(toggleModal(false));
+    //add to local storage
     setLocalstorage([...listFavouriteDish, customDish]);
   };
 
@@ -48,13 +56,13 @@ export const Modal: React.FC = () => {
                   className={styles.inputDishTitle}
                   type="text"
                   placeholder="Dish title"
-                  onKeyPress={handleTitle}
+                  onChange={handleTitle}
                 />
                 <textarea
                   ref={refDishDescription}
                   className={styles.inputDescription}
                   placeholder="Dish description..."
-                  onKeyPress={handleDishDescription}
+                  onChange={handleDishDescription}
                 />
                 <button
                   onClick={handleAddCustomDish}

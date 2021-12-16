@@ -3,6 +3,7 @@ import { getDishAction } from "../interfaces/getDishInterface";
 import path from "../utils/path.json";
 import { actionType } from "./actionTypesDish";
 
+// fetch dish
 export const getDish = () => {
   return async function (dispatch: Dispatch<getDishAction>) {
     await dispatch({ type: actionType.LOADING, payload: true });

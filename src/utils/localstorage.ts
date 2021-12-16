@@ -4,9 +4,15 @@ export const setLocalstorage = (data: any) => {
   localStorage.setItem("favouriteDish", JSON.stringify(data));
 };
 
-export const getLocalstorage = (dispatch: Function) => {
+export const getLocalstorage = (
+  dispatch: Function,
+  listFavouriteDish: any[]
+) => {
   const savedDish = JSON.parse(localStorage.getItem("favouriteDish") || "[]");
   savedDish.map((dish: any[]) => {
-    dispatch(addToFavourite(dish));
+    return (
+      listFavouriteDish.includes(dish) ||
+      (listFavouriteDish.length === 0 && dispatch(addToFavourite(dish)))
+    );
   });
 };

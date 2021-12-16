@@ -5,15 +5,17 @@ import { addToFavourite, getDish } from "../../redux/actionDish";
 import styles from "./DishCard.module.css";
 
 export const DishCardBtn: React.FC = () => {
-  const { data } = useTypeSelector((state) => state.dish);
+  const { data, listFavouriteDish } = useTypeSelector((state) => state.dish);
   const dispatch = useDispatch();
 
+  //update dish
   const handleGetDish = () => {
     dispatch(getDish());
   };
 
+  //add to favourite
   const handleAddToFavourite = () => {
-    dispatch(addToFavourite(data[0]));
+    !listFavouriteDish.includes(data[0]) && dispatch(addToFavourite(data[0]));
   };
 
   return (

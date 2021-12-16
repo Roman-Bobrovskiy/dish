@@ -1,0 +1,94 @@
+.wrapNavigation {
+  width: 100%;
+  background-color: white;
+  height: 4rem;
+  position: fixed;
+  top: 0;
+}
+
+.wrapMenu {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  left: -300px;
+  z-index: 1100;
+  width: 300px;
+  height: 100vh;
+  transform: translate3d(0px, 0px, 0px);
+  transition: all 0.3s ease 0s;
+  background-color: #202020d1;
+  margin-top: 0;
+  z-index: 10000;
+}
+
+.menuBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 2%;
+  left: 2%;
+  width: 26px;
+  height: 26px;
+  z-index: 1;
+  outline: none;
+  border: 0;
+  cursor: pointer;
+  background-color: transparent;
+  overflow: hidden;
+}
+
+.menuBtn:focus-visible {
+  border: 1px solid black;
+  outline: 1px solid white;
+}
+
+.burgerBtnIcon,
+.burgerBtnIcon::before,
+.burgerBtnIcon::after {
+  position: absolute;
+  width: 14px;
+  height: 3px;
+  background-color: #c4c4c4;
+  cursor: pointer;
+}
+.burgerBtnIcon::before {
+  display: block;
+  content: "";
+  top: -5px;
+  cursor: pointer;
+}
+.burgerBtnIcon::after {
+  display: block;
+  content: "";
+  top: 5px;
+  cursor: pointer;
+}
+
+.burgerMenuCloseBtn {
+  position: relative;
+  left: 85%;
+  top: 5%;
+  outline: none;
+  border: 0;
+  right: 100%;
+  width: 32px;
+  height: 32px;
+  background: transparent;
+  cursor: pointer;
+}
+
+.burgerMenuCloseBtn:focus-visible {
+  border: 1px solid black;
+  outline: 1px solid white;
+}
+
+.burgerMenuItems > a {
+  text-decoration: none;
+  color: white;
+  margin: auto 1rem;
+}
+.burgerMenuItems > a:hover {
+  text-shadow: 0px 0px 3px #ffffff;
+}

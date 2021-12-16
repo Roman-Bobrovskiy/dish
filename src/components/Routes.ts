@@ -1,5 +1,5 @@
 let Routes = {
-  home: "/",
+  home: "/dish",
   favourite: "/favourite",
 };
 

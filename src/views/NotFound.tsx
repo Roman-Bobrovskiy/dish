@@ -1,27 +1,12 @@
 import React from "react";
-// import Routes from "../components/Routes";
+import Routes from "../components/Routes";
 import { Link } from "react-router-dom";
-// import url from "../utils/Path.json";
 
-let styles = {
-  container: {
-    textAlign: "center",
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  status: {
-    fontSize: 46,
-  },
-};
-
-export const NotFound = () => {
+export const NotFound: React.FC = () => {
   return (
-    <>
-      <h1 style={styles.status}>404</h1>
-      {/* <img src={url.noPage} alt="404 page" width="200" /> */}
-      {/* <p>{<Link to={{ pathname: `${Routes.home}` }}>HOME</Link>}</p> */}
-    </>
+    <div className="nopage">
+      <h1 className="text404">404</h1>
+      <p>{<Link to={{ pathname: `${Routes.home}` }}>HOME</Link>}</p>
+    </div>
   );
 };
